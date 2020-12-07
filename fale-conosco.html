@@ -7,6 +7,13 @@
         <link rel="stylesheet" type="text/css" href="_css/form.css"/>
     </head>
     <script src="_javascript/funcoes.js"></script>
+    <script>
+        function calc_total(){
+            var qtd = parseInt(document.getElementById('cQtd').value);
+            var tot = qtd * 1500;
+            document.getElementById('cTot').value = tot;
+        }
+    </script> 
     <body>
         <div id="interface">
             <header id="cabecalho">
@@ -33,11 +40,11 @@
                                 <li>Vídeos</li>
                             </ul>
                             -->
-                    </ul>
+                    </ul> 
                 </nav>  
             </header>  
 
-            <section id="corpo"> <!-- uma mesma section pode ter vários <article> -->
+            <section id="fContato"> <!-- uma mesma section pode ter vários <article> -->
                 <article id=noticia-principal>
                     <header id="cabecalho-artigo">
                         <hgroup> 
@@ -47,7 +54,7 @@
                         <h3 class="direita">Atualizado em 23/Abril/2013</h3>
                         </hgroup>
                     </header>
-                    <form method="POST" id="fContato" action="mailto:helder.ramos.oliveira@gmail.com">
+                    <form method="POST" id="fContato" action="mailto:helder.ramos.oliveira@gmail.com" oninput="calc_total();"> <!-- oninput - toda vez que eu mudar algo do formulario ele vai recalcular esse valor -->
                         <fieldset id="usuario">
                             <legend>Identificação do Usuário</legend>
                             <p><label for="cNome">Nome: </label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Primeiro Nome"/></p>
@@ -99,23 +106,24 @@
 
                         <fieldset id="pedido">
                             <legend>Quero um Google Glass</legend>
-                            <p><label for="">Gostaria de adquirir um Google Glass quando disponível<label></p>
-                            <p><label for="">Cor:<label></p>
-                            <p><label for="">Quantidade:<label></p>
-                            <p><label for="">Preço Total: R$<label></p>
+                            <p><input type="checkbox" name="tPed" id="cPed"/> <label for="cPed">Gostaria de adquirir um Google Glass quando disponível<label></p>
+                            <p><label for="cCor">Cor: <label><input type="color" name="tCor" id="cCor"  value="#0000FF"/></p>
+                            <p><label for="cQtd">Quantidade:<label><input type="number" name="tQtd" id="cQtd" min="0" max="5"/></p>
+                            <p><label for="cTot">Preço Total: R$ <label><input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly/></p>
                         </fieldset>
 
 
-                        [BOTÃO ENVIAR]
+                        <!-- <input type="submit" value="Enviar"/> -->
+                        <input type="image" name="tEnviar" id="cEnviar" src="_imagens/botao-enviar.png"/>
                     </form>
-            </article>
-        </section>
+                </article>
+            </section>
 
-        <footer id="rodape"> 
-            <p>Copyright&copy; 2013 - by Gustavo Guanabara<br><p>
-            <p><a target="_blank" href="https://www.facebook.com">Facebook</a> 
-            |
-            <a target="_blank" href="https://www.twitter.com"> Twitter</a></p>
+            <footer id="rodape"> 
+                <p>Copyright&copy; 2013 - by Gustavo Guanabara<br><p>
+                <p><a target="_blank" href="https://www.facebook.com">Facebook</a> 
+                |
+                <a target="_blank" href="https://www.twitter.com"> Twitter</a></p>
             </footer>
         </div>
     </body>
