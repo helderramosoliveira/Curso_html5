@@ -38,9 +38,9 @@ a:hover {
 }
 
 header#cabecalho img#icone{ /*img#icone {   também funciona */
-    position: absolute;
-    left: 750px ;
-    top: 70px;
+    position: relative;
+    left: 680px ;
+    top: 0px;
 }
 
 header#cabecalho {
