@@ -38,15 +38,17 @@ a:hover {
 }
 
 header#cabecalho img#icone{ /*img#icone {   também funciona */
-    position: relative;
-    left: 680px ;
-    top: 0px;
+    position: absolute; /* absoluto em relação ao header */
+    /*left: 680px ;*/
+    right: 40px;
+    top: 40px;
 }
 
 header#cabecalho {
     border-bottom: 1px #606060 solid; /* dashed, dottted, double */
     height: 150px;
     background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px; /* os dois ultimos são deslocamentos vertical e horizontal */
+    position: relative;
 }
 
 header#cabecalho h1 {
@@ -103,9 +105,9 @@ header#cabecalho h2 {
     nav#menu ul {
         list-style: none; /* some com as bolinhas dos menus */
         text-transform: uppercase;
-        position: absolute; /* posso colocar em qualquer parte do site */
-        top: -18px;
-        left: 33%; 
+        position: absolute;
+        top: -40px;
+        left: 25%; 
     }
 
     nav#menu li {
